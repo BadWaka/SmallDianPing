@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.waka.workspace.smalldianping">
+
+    <!-- 地图包、搜索包需要的基础权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 定位包、导航包需要的额外权限（注：基础权限也需要） -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- 获取模拟定位信息权限，必须在调试时使用 -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /> -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />  <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />        <!-- 使用照相机权限 -->
+    <uses-feature android:name="android.hardware.camera.autofocus" />   <!-- 自动聚焦权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- 配置key -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="d2aea69fb517da6952689c32d069a05c" />
+        <!-- 高德定位服务 -->
+        <service android:name="com.amap.api.location.APSService" />
+
+        <activity android:name=".Activity.Main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.Main.Fragment.LoginActivity" />
+        <activity android:name=".Activity.SearchInput.SearchInputActivity" />
+        <activity android:name=".Activity.ResultMap.ResultMapActivity" />
+        <activity android:name=".Activity.ResultList.ResultListActivity" />
+        <activity android:name=".Activity.StoreDetail.CommodityDetailActivity" />
+        <activity android:name=".Activity.StoreDetail.SubmitOrderActivity" />
+        <activity android:name=".Activity.Main.Fragment.RegisterActivity" />
+
+        <!-- 隐藏键盘 --><!-- 全屏 -->
+        <activity android:name=".QRCODE.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.CityPicker.CityPickerDialogActivity"
+            android:label="@string/activity_city_picker_dialog_title"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".Activity.StoreDetail.StoreDetailActivity"></activity>
+        <activity android:name=".Activity.Main.Fragment.Order.OrderDetailActivity">
+
+        </activity>
+        <activity android:name=".Activity.Main.Fragment.Order.OrderEvaluateActivity"></activity>
+    </application>
+
+</manifest>

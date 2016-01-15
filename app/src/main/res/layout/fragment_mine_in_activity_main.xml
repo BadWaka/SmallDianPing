@@ -1,0 +1,107 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main.MainActivityFragment.ThirdFragment">
+
+    <!--标题栏-->
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        card_view:cardBackgroundColor="@color/colorPrimary"
+        card_view:cardCornerRadius="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/fragment_mine_title"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <TextView android:id="@+id/regist_mine_fragment_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/white"
+                android:text="去注册"
+                android:textSize="15sp"
+                android:layout_marginRight="16dp"
+                android:gravity="center_vertical"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="56dp">
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cvUser"
+            android:layout_width="match_parent"
+            android:layout_height="112dp"
+            android:layout_margin="@dimen/activity_margin"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardBackgroundColor="@color/colorPrimary"
+            card_view:cardCornerRadius="@dimen/card_corner_radius">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgHeadIcon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="@dimen/activity_margin"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_margin"
+                    android:layout_weight="1"
+                    android:text="@string/fragment_mine_login_tips"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:visibility="visible" />
+
+
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="@dimen/activity_margin"
+                    android:src="@mipmap/ic_keyboard_arrow_right_white_24dp" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/btnLoginOut"
+            android:visibility="gone"
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:textColor="@android:color/black"
+            android:textSize="20dp"
+            android:text="退出登陆"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

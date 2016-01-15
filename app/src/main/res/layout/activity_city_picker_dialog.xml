@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".Activity.CityPicker.CityPickerDialogActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:background="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <com.waka.workspace.smalldianping.CustomViews.PickerView
+            android:id="@+id/pvProvince"
+            android:layout_width="112dp"
+            android:layout_height="112dp" />
+
+        <com.waka.workspace.smalldianping.CustomViews.PickerView
+            android:id="@+id/pvCity"
+            android:layout_width="112dp"
+            android:layout_height="112dp" />
+
+        <com.waka.workspace.smalldianping.CustomViews.PickerView
+            android:id="@+id/pvDistrict"
+            android:layout_width="112dp"
+            android:layout_height="112dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background_in_activity_city_picker"
+            android:text="@string/cancel"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnConfirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_margin"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background_in_activity_city_picker"
+            android:text="@string/confirm"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+
+</LinearLayout>
